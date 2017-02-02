@@ -3,6 +3,8 @@ class User < ApplicationRecord
   before_create :create_remember_token
   has_secure_password
 
+  has_many :posts
+
   def User.digest(string)
     Digest::SHA1.hexdigest string.to_s
   end

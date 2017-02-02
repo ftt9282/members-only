@@ -1,0 +1,12 @@
+<h1>All Posts</h1>
+<% @posts.each do |p| %>
+  <h2><%= p.title %></h2>
+  <h3>
+  Written by: 
+  <% if logged_in? %>
+    <%= p.user.name %>
+  <% else %>
+    Anonymous
+  <% end %>
+  <p><%= p.body %></p>
+<% end %>
